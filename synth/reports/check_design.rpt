@@ -1,0 +1,24 @@
+ 
+****************************************
+check_design summary:
+Version:     X-2025.06-SP2
+Date:        Wed Jul  8 22:33:33 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Shorted outputs (LINT-31)                                       2
+
+Cells                                                               3
+    Cells do not drive (LINT-1)                                     2
+    Connected to power or ground (LINT-32)                          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'credit_reg', cell 'C69' does not drive any nets. (LINT-1)
+Warning: In design 'memory', cell 'C227' does not drive any nets. (LINT-1)
+Warning: In design 'control_unit', output port 'mem_write' is connected directly to output port 'dispense'. (LINT-31)
+Warning: In design 'control_unit', output port 'sel_change' is connected directly to output port 'error_out'. (LINT-31)
+Warning: In design 'vending_top', a pin on submodule 'u_credit_reg' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'coin_value[7]' is connected to logic 0. 
+1
