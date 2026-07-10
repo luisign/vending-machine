@@ -60,14 +60,15 @@ module vending_tb;
 
     task buy_item(input [1:0] item, input [1:0] coins []);
         begin
+            sel_item = item;
             foreach (coins[i]) begin
                 apply_coin(coins[i]);
             end
-            @(posedge clk);
-            sel_item = item;
             confirm = 1;
             @(posedge clk);
+            @(posedge clk);
             confirm = 0;
+            @(posedge clk);
         end
     endtask
 
