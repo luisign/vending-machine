@@ -17,7 +17,7 @@ module control_unit (
     output logic mem_write,
     output logic sel_change,
     output logic load_change,
-
+    output logic cancel_collect,
     output logic dispense,
     output logic error_out,
     output state_t state_out
@@ -25,7 +25,6 @@ module control_unit (
 
     state_t current_state, next_state;
 
-    // Transição de estados:
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             current_state <= IDLE;
@@ -36,7 +35,6 @@ module control_unit (
 
     assign state_out = current_state;
 
-    // Decisão do próximo estado:
     always_comb begin
         next_state = current_state; 
 
@@ -47,10 +45,11 @@ module control_unit (
             end
             
             COLLECT: begin
-                if (cancel) 
-                    next_state = ERROR;
-                else if (confirm) 
+                if (cancel) begin
+                    next_state = CHANGE;
+                end else if (confirm) begin
                     next_state = CHECK;
+                end
             end
             
             CHECK: begin
@@ -70,7 +69,7 @@ module control_unit (
             
             ERROR: begin
                 if (cancel)
-                    next_state = CHANGE;
+                    next_state = IDLE;
                 else
                     next_state = ERROR;
             end
@@ -79,44 +78,58 @@ module control_unit (
         endcase
     end
 
-    // Saídas de controle:
     always_comb begin
-        credit_load = 1'b0;
-        clear = 1'b0;
-        mem_write = 1'b0;
-        sel_change = 1'b0;
-        load_change = 1'b0;
-        dispense = 1'b0;
-        error_out = 1'b0;
+        credit_load    = 1'b0;
+        clear          = 1'b0;
+        mem_write      = 1'b0;
+        sel_change     = 1'b0;
+        load_change    = 1'b0;
+        cancel_collect = 1'b0;
+        dispense       = 1'b0;
+        error_out      = 1'b0;
 
         case (current_state)
             IDLE: begin
-                if (coin_in != 2'b00) 
+                if (coin_in != 2'b00) begin
                     credit_load = 1'b1;
+                end
             end
             
             COLLECT: begin
-                if (coin_in != 2'b00) 
+                if (coin_in != 2'b00) begin
                     credit_load = 1'b1;
+                end
+                if (cancel) begin
+                    cancel_collect = 1'b1;
+                end
             end
             
             CHECK: begin
+
             end
             
             DISPENSE: begin
-                dispense = 1'b1;
-                mem_write = 1'b1;
+                dispense    = 1'b1;
+                mem_write   = 1'b1;
                 load_change = 1'b1;
-            end
-            
-            ERROR: begin
-                error_out = 1'b1;
-                sel_change = 1'b1;
-                load_change = 1'b1;
+                sel_change  = 1'b0; 
             end
             
             CHANGE: begin
-                clear = 1'b1;
+                clear = 1'b1; 
+                if (cancel_collect) begin
+                    load_change = 1'b1;
+                    sel_change  = 1'b1;
+                end
+            end
+            
+            ERROR: begin
+                error_out   = 1'b1;
+                sel_change  = 1'b1; 
+                load_change = 1'b1;
+                if (cancel) begin
+                    clear = 1'b1;
+                end
             end
         endcase
     end
