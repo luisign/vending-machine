@@ -1,6 +1,6 @@
-# Controlador digital de vending machine em SystemVerilog
+# Controlador digital de _vending machine_ em SystemVerilog
 
-Projeto da trilha RTL Design do programa CI Expert (Residência Tecnológica em Microeletrônica — MCTI/Softex/IRede), criando um controlador digital de uma máquina de venda automática com 4 itens de exemplo (café, água, suco e snack), utilizando uma máquina de estados finitos do tipo Moore, com memória de dados e datapath combinacional.
+Projeto da trilha RTL Design do programa CI Expert (Residência Tecnológica em Microeletrônica — MCTI/Softex/IRede), criando um controlador digital de uma máquina de venda automática com 4 itens de exemplo (café, água, suco e _snack_), utilizando uma máquina de estados finitos do tipo Moore, com memória de dados e _datapath_ combinacional.
 
 ## Estrutura do repositório
 
@@ -26,7 +26,7 @@ relatorio.pdf
 ### Pasta **rtl/**:
 - **vending_pkg.sv**: define os estados da máquina de estados, larguras de sinais e outros parâmetros compartilhados entre os módulos;
 - **credit_reg.sv**: um registrador síncrono de 8 bits que acumula o valor das moedas inseridas pelo usuário;
-- **memory.sv**: memória que armazena o preço e estoque de cada um dos 4 itens (café, água, suco e snack), com leitura e escrita síncronas;
+- **memory.sv**: memória que armazena o preço e estoque de cada um dos 4 itens (café, água, suco e _snack_), com leitura e escrita síncronas;
 - **comparator.sv**: inclui a lógica combinacional que verifica se há crédito suficiente e estoque disponível para a compra;
 - **subtractor.sv**: inclui a lógica combinacional que calcula o troco a ser devolvido;
 - **control_unit.sv**: máquina de estados do tipo Moore com 6 estados (IDLE, COLLECT, CHECK, DISPENSE, CHANGE, ERROR) que coordena o fluxo da compra;
@@ -35,7 +35,7 @@ relatorio.pdf
 - **tb_vending.sv**: arquivo de teste que verifica 4 cenários diferentes de uso.
 ### Pasta **synth/**
 - **synth.tcl**: script de síntese lógica;
-- **vending.sdc**: constraints de timing;
+- **vending.sdc**: _constraints_ de _timing_;
 - **Pasta reports/**: relatórios gerados pela síntese lógica;
 
 ## Fluxo simplificado de funcionamento
