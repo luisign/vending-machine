@@ -108,8 +108,10 @@ module vending_tb;
     endtask
 
     initial begin
-        $dumpfile("vending_tb.vcd");
+	$dumpfile("../sim/vending_tb.vcd");
         $dumpvars(0, vending_tb);
+        $fsdbDumpfile("../sim/vending_tb.fsdb");
+        $fsdbDumpvars(0, vending_tb);
 
         coin_in = 2'b00;
         sel_item = 2'b00;
