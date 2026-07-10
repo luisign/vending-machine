@@ -30,6 +30,7 @@ module vending_top (
     logic mem_write;
     logic sel_change;
     logic load_change;
+    logic cancel_collect;
 
     assign display = credit;
 
@@ -42,13 +43,14 @@ module vending_top (
         endcase
     end
 
-    assign mux_out = (sel_change) ? credit : change_wire;
+    
+    assign mux_out = (sel_change || state_out == CHANGE && cancel) ? credit : change_wire;
 
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             change_out <= 8'b0;
-        end else if (load_change) begin
-            change_out <= mux_out;
+        end else if (load_change || (state_out == COLLECT && cancel)) begin
+            change_out <= (state_out == COLLECT && cancel) ? credit : mux_out;
         end
     end
 
@@ -66,7 +68,8 @@ module vending_top (
         .load_change (load_change),
         .dispense (dispense),
         .error_out (error_out),
-        .state_out (state_out)
+        .state_out (state_out),
+        .cancel_collect(cancel_collect)
     );
 
     credit_reg u_credit_reg (
