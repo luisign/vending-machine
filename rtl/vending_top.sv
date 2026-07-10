@@ -85,6 +85,7 @@ module vending_top (
         .clk (clk),
         .rst (rst),
         .mem_write (mem_write),
+        .cancel_collect (cancel_collect),
         .sel_item (sel_item),
         .price (price),
         .stock (stock)
