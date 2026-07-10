@@ -4,7 +4,7 @@ Report : constraint
         -all_violators
 Design : vending_top
 Version: X-2025.06-SP2
-Date   : Wed Jul  8 22:33:38 2026
+Date   : Fri Jul 10 14:29:56 2026
 ****************************************
 
 
@@ -17,7 +17,9 @@ Date   : Wed Jul  8 22:33:38 2026
                                 0.49           0.13 f        -0.36  (VIOLATED)
    u_credit_reg/credit_reg[6]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
-   u_memory/stocks_array_reg[2][4]/D
+   u_memory/stocks_array_reg[1][1]/D
+                                0.49           0.14 f        -0.35  (VIOLATED)
+   u_memory/stocks_array_reg[1][4]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
    u_memory/stocks_array_reg[3][2]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
@@ -27,11 +29,11 @@ Date   : Wed Jul  8 22:33:38 2026
                                 0.49           0.14 f        -0.35  (VIOLATED)
    u_memory/stocks_array_reg[0][4]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
-   u_memory/stocks_array_reg[1][3]/D
-                                0.49           0.14 f        -0.35  (VIOLATED)
    u_memory/stocks_array_reg[2][2]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
    u_memory/stocks_array_reg[2][3]/D
+                                0.49           0.14 f        -0.35  (VIOLATED)
+   u_memory/stocks_array_reg[1][3]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
    u_memory/stocks_array_reg[3][0]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
@@ -39,13 +41,9 @@ Date   : Wed Jul  8 22:33:38 2026
                                 0.49           0.14 f        -0.35  (VIOLATED)
    u_memory/stocks_array_reg[0][3]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
-   u_memory/stocks_array_reg[1][1]/D
+   u_memory/stocks_array_reg[2][4]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
-   u_memory/stocks_array_reg[1][4]/D
-                                0.49           0.14 f        -0.35  (VIOLATED)
-   u_memory/stocks_array_reg[2][0]/D
-                                0.49           0.14 f        -0.35  (VIOLATED)
-   u_memory/stocks_array_reg[2][1]/D
+   u_memory/stocks_array_reg[1][0]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
    u_memory/stocks_array_reg[0][0]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
@@ -55,31 +53,35 @@ Date   : Wed Jul  8 22:33:38 2026
                                 0.49           0.14 f        -0.35  (VIOLATED)
    u_memory/stocks_array_reg[0][2]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
-   u_memory/stocks_array_reg[1][0]/D
+   u_memory/stocks_array_reg[2][0]/D
                                 0.49           0.14 f        -0.35  (VIOLATED)
+   u_memory/stocks_array_reg[2][1]/D
+                                0.49           0.14 f        -0.35  (VIOLATED)
+   u_fsm/current_state_reg[1]/D
+                                0.49           0.15 f        -0.34  (VIOLATED)
+   u_fsm/current_state_reg[0]/D
+                                0.49           0.15 f        -0.34  (VIOLATED)
    change_out_reg[7]/D          0.49           0.16 f        -0.33  (VIOLATED)
    change_out_reg[0]/D          0.49           0.16 f        -0.33  (VIOLATED)
+   change_out_reg[1]/D          0.49           0.16 f        -0.33  (VIOLATED)
    change_out_reg[5]/D          0.49           0.16 f        -0.33  (VIOLATED)
+   change_out_reg[2]/D          0.49           0.16 f        -0.33  (VIOLATED)
    change_out_reg[6]/D          0.49           0.16 f        -0.33  (VIOLATED)
    change_out_reg[4]/D          0.49           0.16 f        -0.33  (VIOLATED)
-   change_out_reg[1]/D          0.49           0.16 f        -0.33  (VIOLATED)
-   change_out_reg[2]/D          0.49           0.16 f        -0.33  (VIOLATED)
    change_out_reg[3]/D          0.49           0.16 f        -0.33  (VIOLATED)
-   u_fsm/current_state_reg[2]/D
-                                0.49           0.17 r        -0.32  (VIOLATED)
-   u_fsm/current_state_reg[1]/D
+   u_memory/prices_array_reg[0][0]/D
                                 0.49           0.17 f        -0.32  (VIOLATED)
-   u_fsm/current_state_reg[0]/D
-                                0.49           0.18 f        -0.31  (VIOLATED)
+   u_fsm/current_state_reg[2]/D
+                                0.49           0.18 f        -0.30  (VIOLATED)
    u_credit_reg/credit_reg[7]/D
                                 0.49           0.21 r        -0.28  (VIOLATED)
    u_credit_reg/credit_reg[2]/D
                                 0.49           0.22 r        -0.27  (VIOLATED)
-   u_credit_reg/credit_reg[5]/D
-                                0.49           0.22 r        -0.27  (VIOLATED)
    u_credit_reg/credit_reg[3]/D
                                 0.49           0.22 r        -0.27  (VIOLATED)
    u_credit_reg/credit_reg[4]/D
+                                0.49           0.22 r        -0.27  (VIOLATED)
+   u_credit_reg/credit_reg[5]/D
                                 0.49           0.22 r        -0.27  (VIOLATED)
    u_credit_reg/credit_reg[1]/D
                                 0.49           0.22 r        -0.27  (VIOLATED)
