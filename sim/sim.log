@@ -1,0 +1,21 @@
+Command: /home/luis.coutinho/Downloads/new_vending_machine/rtl/../sim/simv -l ../sim/sim.log
+Chronologic VCS simulator copyright 1991-2025
+Contains Synopsys proprietary information.
+Compiler version X-2025.06-SP2_Full64; Runtime version X-2025.06-SP2_Full64;  Jul 10 11:00 2026
+[PASS] Cenario 1: dispense = 1
+[PASS] Cenario 1: troco = 75
+[PASS] Cenario 1: credito = 0 ao final
+[PASS] Cenario 2: ERROR = 1
+[PASS] Cenario 2: FSM em ERROR
+[PASS] Cenario 3: cancel troco = 200
+[PASS] Cenario 3: credito = 0 apos cancelamento
+[PASS] Cenario 3: FSM retorna a IDLE
+[PASS] Cenario 4: ERROR estoque vazio = 1
+[PASS] Cenario 4: FSM em ERROR (sem estoque)
+Todos os cenarios foram validados!
+$finish called from file "../sim/tb_vending.sv", line 166.
+$finish at simulation time               695000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 695000 ps
+CPU Time:      0.400 seconds;       Data structure size:   0.0Mb
+Fri Jul 10 11:00:59 2026
