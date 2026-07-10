@@ -6,15 +6,15 @@ Report : timing
         -max_paths 1
 Design : vending_top
 Version: X-2025.06-SP2
-Date   : Wed Jul  8 22:33:38 2026
+Date   : Fri Jul 10 14:29:56 2026
 ****************************************
 
 Operating Conditions: tt1p05v25c   Library: saed32rvt_tt1p05v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: sel_item[0]
+  Startpoint: sel_item[1]
               (input port clocked by clk)
-  Endpoint: u_fsm/current_state_reg[2]
+  Endpoint: u_fsm/current_state_reg[1]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -31,40 +31,40 @@ Wire Load Model Mode: enclosed
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   input external delay                                    3.00       3.00 r
-  sel_item[0] (in)                                        0.00       3.00 r
-  u_memory/sel_item[0] (memory)                           0.00       3.00 r
-  u_memory/U4/Y (INVX2_RVT)                               0.10       3.10 f
-  u_memory/U15/Y (NAND2X0_RVT)                            0.06       3.15 r
-  u_memory/U16/Y (NAND2X0_RVT)                            0.05       3.20 f
-  u_memory/price[1] (memory)                              0.00       3.20 f
-  u_comparator/price[1] (comparator)                      0.00       3.20 f
-  u_comparator/U2/Y (INVX0_RVT)                           0.05       3.25 r
-  u_comparator/U3/Y (OA22X1_RVT)                          0.06       3.31 r
-  u_comparator/U4/Y (AO21X1_RVT)                          0.05       3.36 r
-  u_comparator/U6/Y (AO222X1_RVT)                         0.10       3.45 r
-  u_comparator/U7/Y (AO222X1_RVT)                         0.09       3.54 r
-  u_comparator/U8/Y (AO222X1_RVT)                         0.09       3.63 r
-  u_comparator/U9/Y (AO222X1_RVT)                         0.10       3.73 r
-  u_comparator/U11/Y (AO222X1_RVT)                        0.09       3.82 r
-  u_comparator/U13/Y (OA22X1_RVT)                         0.06       3.88 r
-  u_comparator/can_sell (comparator)                      0.00       3.88 r
-  u_fsm/can_sell (control_unit)                           0.00       3.88 r
-  u_fsm/U8/Y (OR3X1_RVT)                                  0.06       3.94 r
-  u_fsm/U11/Y (NAND3X0_RVT)                               0.04       3.98 f
-  u_fsm/current_state_reg[2]/D (DFFARX1_RVT)              0.01       3.99 f
-  data arrival time                                                  3.99
+  sel_item[1] (in)                                        0.02       3.02 r
+  u_memory/sel_item[1] (memory)                           0.00       3.02 r
+  u_memory/U4/Y (INVX2_RVT)                               0.08       3.10 f
+  u_memory/U17/Y (AND2X1_RVT)                             0.06       3.16 f
+  u_memory/U18/Y (OA21X1_RVT)                             0.06       3.22 f
+  u_memory/price[1] (memory)                              0.00       3.22 f
+  u_comparator/price[1] (comparator)                      0.00       3.22 f
+  u_comparator/U2/Y (INVX0_RVT)                           0.04       3.26 r
+  u_comparator/U4/Y (OA22X1_RVT)                          0.06       3.31 r
+  u_comparator/U5/Y (AO21X1_RVT)                          0.05       3.36 r
+  u_comparator/U7/Y (AO222X1_RVT)                         0.10       3.46 r
+  u_comparator/U8/Y (AO222X1_RVT)                         0.10       3.56 r
+  u_comparator/U10/Y (AO222X1_RVT)                        0.10       3.65 r
+  u_comparator/U12/Y (AO222X1_RVT)                        0.10       3.75 r
+  u_comparator/U14/Y (AO222X1_RVT)                        0.09       3.85 r
+  u_comparator/U16/Y (OA22X1_RVT)                         0.06       3.91 r
+  u_comparator/can_sell (comparator)                      0.00       3.91 r
+  u_fsm/can_sell (control_unit)                           0.00       3.91 r
+  u_fsm/U23/Y (NAND4X0_RVT)                               0.05       3.96 f
+  u_fsm/U24/Y (NAND2X0_RVT)                               0.05       4.00 r
+  u_fsm/current_state_reg[1]/D (DFFARX1_RVT)              0.01       4.02 r
+  data arrival time                                                  4.02
 
   clock clk (rise edge)                                  20.00      20.00
   clock network delay (ideal)                             0.00      20.00
   clock uncertainty                                      -0.50      19.50
-  u_fsm/current_state_reg[2]/CLK (DFFARX1_RVT)            0.00      19.50 r
-  library setup time                                     -0.03      19.47
-  data required time                                                19.47
+  u_fsm/current_state_reg[1]/CLK (DFFARX1_RVT)            0.00      19.50 r
+  library setup time                                     -0.04      19.46
+  data required time                                                19.46
   --------------------------------------------------------------------------
-  data required time                                                19.47
-  data arrival time                                                 -3.99
+  data required time                                                19.46
+  data arrival time                                                 -4.02
   --------------------------------------------------------------------------
-  slack (MET)                                                       15.48
+  slack (MET)                                                       15.45
 
 
 1
